@@ -1,4 +1,7 @@
 #!/bin/bash
+
+source $(dirname $0)/simple_curses.sh
+
 #creating two fresh fifo pipe
 rm -f inputPipe
 mkfifo inputPipe
@@ -10,6 +13,12 @@ NC='\033[0m'
 
 #whatever write into inputPipe should go to TCP server(Server ip needs to pass in command line argument)
 #and response of Tcp server should capture in outputPipe
+nc -v $1 19204 > outputPipe <inputPipe &
+pid1=$!
+
+counter=1;
+#continously looking for server response and then afer reading the response, again quering 
+#same information again after some interval
 nc -v $1 19204 > outputPipe <inputPipe &
 pid1=$!
 
