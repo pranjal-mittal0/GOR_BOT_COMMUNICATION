@@ -17,7 +17,7 @@ enp0s31f6-> this value can be different for machine to machine so run ('ip addre
 Ref: https://ostechnix.com/how-to-assign-multiple-ip-addresses-to-single-network-card-in-linux/
 */
 
-const bots = ["127.0.0.14"];
+const bots = ["192.168.3.105"];  // replace this ip with your ip passed in bot_info.sh 
 var botsInfoObj = [];
 var botsControlObj = [];
 var botsNavObj = [];
