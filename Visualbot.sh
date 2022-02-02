@@ -87,7 +87,10 @@ while true;
         window "Vehicle ID" "RED" "100%"
         append $Vehicle_ID
         endwin
-
+      }
+      update()
+      {
+        
       }
       main_loop
 
